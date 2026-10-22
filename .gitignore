@@ -1,0 +1,6 @@
+# Raw microscopy files: too large for GitHub (100 MB per-file limit)
+*.lif
+
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
