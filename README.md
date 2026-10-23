@@ -2,7 +2,7 @@
 
 Single-particle tracking (SPT) analysis of HiLO microscopy movies with two channels: virus-like particles (VLPs) and membrane proteins. A UNet trained on simulated images segments the VLPs. The protein trajectories are then classified by whether they touch a VLP, and their motion is compared with and without contact.
 
-The whole pipeline is in [`Projecte_VLP_Proteins_final.ipynb`](Projecte_VLP_Proteins_final.ipynb). The notebook text and comments are in Catalan.
+The whole pipeline is in [`Projecte_VLP_Proteins_final.ipynb`](Projecte_VLP_Proteins_final.ipynb).
 
 ## The data
 
