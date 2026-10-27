@@ -99,7 +99,7 @@ To tell real VLP effects from chance, every analysis is repeated with the Occln 
 ## Repository structure
 
 ```
-Projecte_VLP_Proteins_final.ipynb   full pipeline (Catalan)
+Projecte_VLP_Proteins_final.ipynb   full pipeline
 register_channels.m                 original MATLAB bead registration
 split_trajs.m                       original MATLAB left/right trajectory split
 20241026 ... Project 1/2 .../       u-track detection and tracking per movie
