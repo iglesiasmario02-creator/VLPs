@@ -1,6 +1,6 @@
-# VLP segmentation and protein–VLP interaction analysis
+# VLP segmentation and Occludin–VLP interaction analysis
 
-Single-particle tracking (SPT) analysis of HiLO microscopy movies with two channels: virus-like particles (VLPs) and membrane proteins. A UNet trained on simulated images segments the VLPs. The protein trajectories are then classified by whether they touch a VLP, and their motion is compared with and without contact.
+Single-particle tracking (SPT) analysis of HiLO microscopy movies with two channels: virus-like particles (VLPs) and Occludin-GFP (membrane protein). A UNet trained on simulated images segments the VLPs. The Occln trajectories are then classified by whether they touch a VLP, and their motion is compared with and without contact.
 
 The whole pipeline is in [`Projecte_VLP_Proteins_final.ipynb`](Projecte_VLP_Proteins_final.ipynb).
 
@@ -8,11 +8,11 @@ The whole pipeline is in [`Projecte_VLP_Proteins_final.ipynb`](Projecte_VLP_Prot
 
 Each frame is 512 × 1200 px and holds both channels side by side, split by an image splitter:
 
-![Raw frame: full frame, VLP channel and protein channel](docs/img/raw_frame.png)
+![Raw frame: full frame, VLP channel and Occln channel](docs/img/raw_frame.png)
 
 | | Left half (x < 600) | Right half (x > 600) |
 |---|---|---|
-| Content | VLPs | Proteins |
+| Content | VLPs | Occln |
 | Appearance | Few bright, almost immobile spots | Many moving particles on a cell background |
 | Input | Raw `.lif` movie | u-track results (`*_tracking.txt`) |
 
@@ -57,7 +57,7 @@ Beads are visible in both channels. They are detected in each half, paired, and 
 
 This is the same approach as [`register_channels.m`](register_channels.m), implemented with scikit-image. The same scheme is used in the `fiducialreg` module of [LLSpy](https://github.com/tlambert03/LLSpy) and in the scikit-image example [Robust matching using RANSAC](https://scikit-image.org/docs/stable/auto_examples/transform/plot_matching.html).
 
-### Protein trajectories and contact
+### Occln trajectories and contact
 
 Red: interacts with a VLP (≥ 3 consecutive frames in contact). Yellow: brief contact. Cyan: no contact (1 in 10 shown).
 
@@ -65,11 +65,11 @@ Red: interacts with a VLP (≥ 3 consecutive frames in contact). Yellow: brief c
 
 ## Control
 
-To tell real VLP effects from chance, every analysis is repeated with the protein positions **rotated 180°** inside the field. This keeps the density and motion of the proteins but removes any real spatial relation to the VLPs.
+To tell real VLP effects from chance, every analysis is repeated with the Occln positions **rotated 180°** inside the field. This keeps the density and motion of the proteins but removes any real spatial relation to the VLPs.
 
 ## Main results
 
-**Proteins accumulate on VLPs.** In 16 of 17 movies, the density of protein positions inside VLPs is higher than in the control. In two of them (P1 s03 and P2 s13) it stays close to the control value.
+**Occludin accumulates on VLPs.** In 16 of 17 movies, the density of Occln positions inside VLPs is higher than in the control. In two of them (P1 s03 and P2 s13) it stays close to the control value.
 
 ![Enrichment real vs control per movie](docs/img/enrichment.png)
 
