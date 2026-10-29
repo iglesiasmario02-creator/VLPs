@@ -1,6 +1,6 @@
 # VLP segmentation and Occludin–VLP interaction analysis
 
-Single-particle tracking (SPT) analysis of HiLO microscopy movies with two channels: virus-like particles (VLPs) and Occludin-GFP (membrane protein). A UNet trained on simulated images segments the VLPs. The Occln trajectories are then classified by whether they touch a VLP, and their motion is compared with and without contact.
+Single-particle tracking (SPT) analysis of HiLO microscopy movies with two channels: virus-like particles (VLPs) and Occludin-HaloTAG (membrane protein). A UNet trained on simulated images segments the VLPs. The Occln trajectories are then classified by whether they touch a VLP, and their motion is compared with and without contact.
 
 The whole pipeline is in [`Projecte_VLP_Proteins_final.ipynb`](Projecte_VLP_Proteins_final.ipynb).
 
